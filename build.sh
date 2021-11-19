@@ -8,5 +8,5 @@ export SUBARCH=x86_64
 export KBUILD_CFLAGS="-Wno-maybe-uninitialized -Wno-memset-elt-size -Wno-duplicate-decl-specifier"
 #nice make  clean
 #nice make  mrproper
-#cp -rf Microsoft/config-wsl ./.config
+cp -rf arch/x86/boot/bzImage /mnt/c/wsl2/basik
 nice make -j$(nproc --all) 2>&1 | tee build.log
