@@ -1,0 +1,18 @@
+**********************************************************
+==========================INFO===========================
+*********************************************************
+    - KERNEL NAME -> [basik]
+    - LINUX KERNEL VERSION -> [5.10.74.3]
+    - CUSTOM KERNEL VERSION -> [#1]
+    - LAST VERSION DATE -> [2021-11-19]
+    - Main purpose of this kernel is to be up to the
+      latest version of WSL with performance improvement
+
+*********************************************************
+=========================FEATURE=========================
+*********************************************************
+    - DEFAULT TCP CONGESTION CONTROL -> [BBR2/FQ_CODEL]
+    - EXT4 OPTIMIZATIONS
+    - NETWORK IMPROVEMENT
+    - SYSCTL VALUES TWEAKED
+    - CPU SCHEDULER (CFS) TWEAKED FROM LIQUORIX/ZEN KERNEL
