@@ -2843,7 +2843,7 @@ static int __net_init tcp_sk_init(struct net *net)
 		*per_cpu_ptr(net->ipv4.tcp_sk, cpu) = sk;
 	}
 
-	net->ipv4.sysctl_tcp_ecn = 2;
+	net->ipv4.sysctl_tcp_ecn = 1;
 	net->ipv4.sysctl_tcp_ecn_fallback = 1;
 
 	net->ipv4.sysctl_tcp_base_mss = TCP_BASE_MSS;
@@ -2866,24 +2866,24 @@ static int __net_init tcp_sk_init(struct net *net)
 	net->ipv4.sysctl_tcp_fin_timeout = TCP_FIN_TIMEOUT;
 	net->ipv4.sysctl_tcp_notsent_lowat = UINT_MAX;
 	net->ipv4.sysctl_tcp_tw_reuse = 2;
-	net->ipv4.sysctl_tcp_no_ssthresh_metrics_save = 1;
+	net->ipv4.sysctl_tcp_no_ssthresh_metrics_save = 0;
 
 	cnt = tcp_hashinfo.ehash_mask + 1;
 	net->ipv4.tcp_death_row.sysctl_max_tw_buckets = cnt / 2;
 	net->ipv4.tcp_death_row.hashinfo = &tcp_hashinfo;
 
 	net->ipv4.sysctl_max_syn_backlog = max(128, cnt / 128);
-	net->ipv4.sysctl_tcp_sack = 1;
+	net->ipv4.sysctl_tcp_sack = 0;
 	net->ipv4.sysctl_tcp_window_scaling = 1;
-	net->ipv4.sysctl_tcp_timestamps = 1;
+	net->ipv4.sysctl_tcp_timestamps = 0;
 	net->ipv4.sysctl_tcp_early_retrans = 3;
 	net->ipv4.sysctl_tcp_recovery = TCP_RACK_LOSS_DETECTION;
-	net->ipv4.sysctl_tcp_slow_start_after_idle = 1; /* By default, RFC2861 behavior.  */
+	net->ipv4.sysctl_tcp_slow_start_after_idle = 0; /* By default, RFC2861 behavior.  */
 	net->ipv4.sysctl_tcp_retrans_collapse = 1;
 	net->ipv4.sysctl_tcp_max_reordering = 300;
-	net->ipv4.sysctl_tcp_dsack = 1;
+	net->ipv4.sysctl_tcp_dsack = 0;
 	net->ipv4.sysctl_tcp_app_win = 31;
-	net->ipv4.sysctl_tcp_adv_win_scale = 1;
+	net->ipv4.sysctl_tcp_adv_win_scale = 2;
 	net->ipv4.sysctl_tcp_frto = 2;
 	net->ipv4.sysctl_tcp_moderate_rcvbuf = 1;
 	/* This limits the percentage of the congestion window which we
@@ -2912,7 +2912,7 @@ static int __net_init tcp_sk_init(struct net *net)
 	net->ipv4.sysctl_tcp_comp_sack_delay_ns = NSEC_PER_MSEC;
 	net->ipv4.sysctl_tcp_comp_sack_slack_ns = 100 * NSEC_PER_USEC;
 	net->ipv4.sysctl_tcp_comp_sack_nr = 44;
-	net->ipv4.sysctl_tcp_fastopen = TFO_CLIENT_ENABLE;
+	net->ipv4.sysctl_tcp_fastopen = 3;
 	spin_lock_init(&net->ipv4.tcp_fastopen_ctx_lock);
 	net->ipv4.sysctl_tcp_fastopen_blackhole_timeout = 0;
 	atomic_set(&net->ipv4.tfo_active_disable_times, 0);
