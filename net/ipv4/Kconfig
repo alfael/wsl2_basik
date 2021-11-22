@@ -2,6 +2,12 @@
 #
 # IP configuration
 #
+config TCP_BBR2_ENABLE_ECN
+	bool "Enable BBR2 ECN"
+	default n
+	help
+	  Force ECN support for BBR2
+
 config IP_MULTICAST
 	bool "IP: multicasting"
 	help

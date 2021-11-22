@@ -388,7 +388,11 @@ static bool bbr_usage_based_cwnd;		/* default: disabled */
  * negotiation or configuration that is outside the scope of the BBRv2
  * alpha release.
  */
+#ifdef CONFIG_TCP_BBR2_ENABLE_ECN
+static bool bbr_ecn_enable = true;
+#else
 static bool bbr_ecn_enable = false;
+#endif
 
 module_param_named(bw_rtts,           bbr_bw_rtts,           int,    0644);
 module_param_named(min_tso_rate,      bbr_min_tso_rate,      int,    0644);
@@ -2317,7 +2321,11 @@ static u32 bbr_ecn_thresh = BBR_UNIT * 1 / 2;  /* 1/2 = 50% */
  * Disabled when 0 (ECN allowed at any RTT).
  * Max allowed for the parameter is 524287 (0x7ffff) us, ~524 ms.
  */
+#ifdef CONFIG_TCP_BBR2_ENABLE_ECN
+static u32 bbr_ecn_max_rtt_us = 0;
+#else
 static u32 bbr_ecn_max_rtt_us = 5000;
+#endif
 
 /* If non-zero, if in a cycle with no losses but some ECN marks, after ECN
  * clears then use a multiplicative increase to quickly reprobe bw by
