@@ -3,15 +3,19 @@
 *********************************************************
     - KERNEL NAME -> [basik]
     - LINUX KERNEL VERSION -> [5.10.74.3]
-    - CUSTOM KERNEL VERSION -> [#1]
-    - LAST VERSION DATE -> [2021-11-19]
+    - CUSTOM KERNEL VERSION -> [#2]
+    - LAST VERSION DATE -> [2021-11-25]
     - Main purpose of this kernel is to be up to the
       latest version of WSL with performance improvement
 
 *********************************************************
 =========================FEATURE=========================
 *********************************************************
-    - DEFAULT TCP CONGESTION CONTROL -> [BBR2/FQ_CODEL]
+    - DEFAULT TCP CONGESTION CONTROL -> [BBR2/FQ_PIE]
+    - REALTIME PATCH -> [version 55]
+    - MANY DEBUGGER DISABLED -> [PERFORMANCE]
+    - ALL ENERGY EFFICIENCY FUNCTIONS REMOVED
+    - BUILD WITH O3 -> [-fno-tree-loop-vectorize]
     - EXT4 OPTIMIZATIONS
     - NETWORK IMPROVEMENT
     - SYSCTL VALUES TWEAKED
