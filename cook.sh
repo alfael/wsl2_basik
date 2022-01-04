@@ -1,6 +1,6 @@
 #!/bin/bash
 cd $(dirname $0)
-export KCONFIG_CONFIG=Microsoft/config-basik
+export KCONFIG_CONFIG=Microsoft/config-protein
 export ARCH=x86_64
 export SUBARCH=x86_64
 export KBUILD_CFLAGS="-Wno-maybe-uninitialized -Wno-memset-elt-size -Wno-duplicate-decl-specifier"
