@@ -2,9 +2,9 @@
 ==========================INFO===========================
 *********************************************************
     - KERNEL NAME -> [basik]
-    - LINUX KERNEL VERSION -> [5.10.74.3]
+    - LINUX KERNEL VERSION -> [5.10.93.2]
     - CUSTOM KERNEL VERSION -> [#Protein]
-    - LAST VERSION DATE -> [2022-01-05]
+    - LAST VERSION DATE -> [2022-02-16]
     - Main purpose of this kernel is to be up to the
       latest version of WSL with performance improvement
 
@@ -14,7 +14,7 @@
     - DEFAULT TCP CONGESTION CONTROL -> [BBR2/FQ_PIE]
     - MANY DEBUGGER DISABLED -> [PERFORMANCE]
     - ALL ENERGY EFFICIENCY FUNCTIONS REMOVED
-    - BUILD WITH GCC 10.2 -> [O3/-fno-tree-loop-vectorize]
+    - BUILD WITH GCC 11.2.0-7ubuntu2 -> [O3/-fno-tree-loop-vectorize]
     - EXT4 OPTIMIZATIONS
     - NETWORK IMPROVEMENT
     - 1000HZ TIMER
